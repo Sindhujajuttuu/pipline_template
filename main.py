@@ -16,8 +16,8 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 # Set S3 credentials
-spark._jsc.hadoopConfiguration().set("fs.s3a.access.key", "AKIAQKPIMDVLUR3AV7TZ")
-spark._jsc.hadoopConfiguration().set("fs.s3a.secret.key", "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")
+# spark._jsc.hadoopConfiguration().set("fs.s3a.access.key", "AKIAQKPIMDVLUR3AV7TZ")
+# spark._jsc.hadoopConfiguration().set("fs.s3a.secret.key", "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")
 
 df = spark.read.format("delta").load("s3a://prudhvi-08052024-test/silver/intermediate/loan_approval")
 df.printSchema()
